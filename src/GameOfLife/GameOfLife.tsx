@@ -21,7 +21,7 @@ const Row = styled.div`
   display: flex;
 `;
 
-export const GameOfLife: React.FC<GameOfLifeProps> = ({
+const _GameOfLife: React.FC<GameOfLifeProps> = ({
   grid,
   cellSize,
   onCellClick,
@@ -59,3 +59,5 @@ export const GameOfLife: React.FC<GameOfLifeProps> = ({
     </div>
   );
 };
+
+export const GameOfLife = React.memo(_GameOfLife);

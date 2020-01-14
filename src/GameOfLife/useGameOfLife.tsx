@@ -43,20 +43,25 @@ export const useGameOfLife = ({ initialGridState }: useGameOfLifeArguments) => {
     isSimulationRunning ? 1000 : null,
   );
 
-  return useMemo(
-    () => ({
+  // eslint-disable-next-line no-console
+  console.log('called useGameOfLife hook');
+
+  return useMemo(() => {
+    // eslint-disable-next-line no-console
+    console.log('recalculated return value');
+
+    return {
       grid,
       isSimulationRunning,
       manuallyToggleCell,
       handleSimulationStartClick,
       handleSimulationStopClick,
-    }),
-    [
-      grid,
-      isSimulationRunning,
-      manuallyToggleCell,
-      handleSimulationStartClick,
-      handleSimulationStopClick,
-    ],
-  );
+    };
+  }, [
+    grid,
+    isSimulationRunning,
+    manuallyToggleCell,
+    handleSimulationStartClick,
+    handleSimulationStopClick,
+  ]);
 };

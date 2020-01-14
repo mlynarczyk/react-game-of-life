@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { GameOfLife } from './GameOfLife';
 import { useGameOfLife } from './useGameOfLife';
 
 type GameOfLifeProps = {
   rows: number;
   columns: number;
+  pleaseRerender: number;
 };
 
 function initialGridState(rows: number, columns: number) {
@@ -20,6 +21,7 @@ function calculateCellSize(columns: number) {
 export const GameOfLifeController: React.FC<GameOfLifeProps> = ({
   rows,
   columns,
+  pleaseRerender,
 }) => {
   const {
     grid,
@@ -28,6 +30,11 @@ export const GameOfLifeController: React.FC<GameOfLifeProps> = ({
     handleSimulationStartClick,
     handleSimulationStopClick,
   } = useGameOfLife({ initialGridState: initialGridState(rows, columns) });
+
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log(pleaseRerender);
+  });
 
   return (
     <GameOfLife
