@@ -81,6 +81,7 @@ module.exports = {
 
     // react-hooks
     'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
 
     // filenames
     'filenames/match-exported': [2, null, null, true],
