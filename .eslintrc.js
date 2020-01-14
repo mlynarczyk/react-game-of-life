@@ -108,6 +108,7 @@ module.exports = {
     ],
 
     // unicorn
+    'unicorn/filename-case': 'off',
     'unicorn/catch-error-name': 'off',
     'unicorn/prefer-node-append': 'off', // ie11
     'unicorn/prefer-node-remove': 'off', // ie11
@@ -136,7 +137,7 @@ module.exports = {
       rules: {
         'filenames/match-regex': [
           2,
-          '^[A-z0-9]+(\\.(test|stories|style|types))*$',
+          '^[A-z0-9]+(\\.(tests|stories|styles|types))*$',
           false,
         ],
       },
@@ -144,7 +145,7 @@ module.exports = {
     // Allow for devDependencies to be imported
     // in the project config, story and test files
     {
-      files: ['.storybook/**', '**/*.stories.*'],
+      files: ['.storybook/**', '**/*.stories.*', '**/*.tests.*'],
       rules: {
         'import/no-extraneous-dependencies': [
           'error',

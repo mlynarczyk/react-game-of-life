@@ -19,6 +19,10 @@
     "declaration": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "lib": [
       "dom",
       "es2015",
@@ -27,6 +31,5 @@
       "es2018.promise"
     ]
   },
-  "include":["src/**/*"],
   "exclude": ["node_modules"]
 }
