@@ -1,6 +1,5 @@
-import { CellValue } from './GameOfLifeController';
-
-type Grid = CellValue[][];
+export type CellValue = 0 | 1;
+export type Grid = CellValue[][];
 
 const neighboringCellsOffsets = [
   [0, 1],
